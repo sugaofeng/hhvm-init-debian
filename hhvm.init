@@ -58,11 +58,13 @@ ${ADDITIONAL_ARGS}"
 . /lib/lsb/init-functions
 
 #
-# Function that starts the daemon/service
+# Load jemalloc library
 #
-
 export LD_PRELOAD=/usr/local/lib/libjemalloc.so
 
+#
+# Function that starts the daemon/service
+#
 check_run_dir() {
     # Only perform folder creation, if the PIDFILE location was not modified
     PIDFILE_BASEDIR=$(dirname ${PIDFILE})
